@@ -1,0 +1,464 @@
+:root {
+    --arkaplan-ana: #0f172a;       /* Sayfa arka planı */
+    --arkaplan-ikincil: #1e293b;   /* Kartların ve kutuların arka planı */
+    --arkaplan-header: #0b1120;    /* Üst menü ve footer bilgi arka planı */
+    --ana-vurgu: #38bdf8;          /* Butonlar, linkler ve vurgular*/
+    --ana-vurgu-hover: #0284c7;    /* hover vurgu rengi */
+    --metin-ana: #f8fafc;          /* Başlıklar ve yazılar*/
+    --metin-ikincil: #94a3b8;      /* Açıklama metinleri*/
+    --kenarlik-rengi: #334155;     /* çerçeve çizgileri */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--arkaplan-ana);
+    color: var(--metin-ana);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s ease;
+}
+
+.site-header {
+    background-color: var(--arkaplan-header);
+    border-bottom: 1px solid var(--kenarlik-rengi);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-icerik {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.logo span {
+    color: var(--ana-vurgu);
+}
+
+.ana-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.ana-menu a {
+    color: var(--metin-ikincil);
+    font-weight: 500;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+
+.ana-menu a:hover,
+.ana-menu a.aktif {
+    color: var(--ana-vurgu);
+    border-bottom-color: var(--ana-vurgu);
+}
+
+.menu-toggle,
+.hamburger-icon {
+    display: none;
+}
+
+
+.hero-bolumu {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--kenarlik-rengi);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.etiket {
+    display: inline-block;
+    color: var(--ana-vurgu);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.hero-metin h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+}
+
+.aciklama {
+    color: var(--metin-ikincil);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.buton-grubu {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.8rem 1.6rem;
+    border-radius: 6px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.btn-birincil {
+    background-color: var(--ana-vurgu);
+    color: #0f172a;
+}
+
+.btn-birincil:hover {
+    background-color: var(--ana-vurgu-hover);
+    color: #ffffff;
+}
+
+.btn-ikincil {
+    border: 1px solid var(--kenarlik-rengi);
+    background-color: var(--arkaplan-ikincil);
+    color: var(--metin-ana);
+}
+
+.btn-ikincil:hover {
+    border-color: var(--ana-vurgu);
+    color: var(--ana-vurgu);
+}
+
+
+.hero-gorsel {
+    display: flex;
+    justify-content: center;
+}
+
+.profil-foto {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--ana-vurgu);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.gorsel-yer-tutucu {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background-color: var(--arkaplan-ikincil);
+    border: 2px dashed var(--ana-vurgu);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--metin-ikincil);
+}
+
+.gorsel-yer-tutucu span {
+    color: var(--ana-vurgu);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+}
+
+
+.ozet-bolumu {
+    padding: 4rem 0;
+}
+
+.kart-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.kart {
+    background-color: var(--arkaplan-ikincil);
+    border: 1px solid var(--kenarlik-rengi);
+    padding: 1.8rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.kart:hover {
+    transform: translateY(-5px);
+    border-color: var(--ana-vurgu);
+}
+
+.kart h3 {
+    color: var(--ana-vurgu);
+    margin-bottom: 0.8rem;
+    font-size: 1.25rem;
+}
+
+.kart p {
+    color: var(--metin-ikincil);
+    font-size: 0.95rem;
+}
+
+
+.sayfa-icerik {
+    padding: 3.5rem 0;
+}
+
+.sayfa-baslik {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--kenarlik-rengi);
+    padding-bottom: 1.5rem;
+}
+
+.sayfa-baslik h1 {
+    font-size: 2.3rem;
+    margin-bottom: 0.4rem;
+}
+
+.sayfa-baslik p {
+    color: var(--metin-ikincil);
+}
+
+.hakkimda-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.bilgi-kutusu {
+    background-color: var(--arkaplan-ikincil);
+    border: 1px solid var(--kenarlik-rengi);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.bilgi-kutusu h2 {
+    color: var(--ana-vurgu);
+    margin-bottom: 1.2rem;
+    font-size: 1.4rem;
+}
+
+.bilgi-kutusu p {
+    color: var(--metin-ikincil);
+    margin-bottom: 1rem;
+}
+
+.kisisel-liste {
+    list-style: none;
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--kenarlik-rengi);
+    padding-top: 1rem;
+}
+
+.kisisel-liste li {
+    padding: 0.5rem 0;
+    color: var(--metin-ikincil);
+}
+
+.kisisel-liste strong {
+    color: var(--metin-ana);
+    margin-right: 0.5rem;
+}
+
+.egitim-adimi {
+    border-left: 2px solid var(--ana-vurgu);
+    padding-left: 1.2rem;
+    margin-bottom: 1.8rem;
+}
+
+.egitim-adimi:last-child {
+    margin-bottom: 0;
+}
+
+.egitim-adimi .tarih {
+    font-size: 0.85rem;
+    color: var(--ana-vurgu);
+    font-weight: 600;
+}
+
+.egitim-adimi h3 {
+    margin: 0.2rem 0;
+    font-size: 1.15rem;
+}
+
+.egitim-adimi p {
+    margin-bottom: 0.2rem;
+}
+
+.egitim-adimi small {
+    color: var(--metin-ikincil);
+}
+
+/* Yetenekler ve Projeler */
+.bolum-aralik {
+    margin-bottom: 3.5rem;
+}
+
+.alt-baslik {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--metin-ana);
+}
+
+.yetenek-etiket-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.yetenek-kutu {
+    background-color: var(--arkaplan-ikincil);
+    border: 1px solid var(--kenarlik-rengi);
+    border-left: 4px solid var(--ana-vurgu);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.yetenek-kutu:hover {
+    transform: translateY(-4px);
+    border-color: var(--ana-vurgu);
+}
+
+.yetenek-kutu h3 {
+    color: var(--metin-ana);
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.yetenek-kutu p {
+    color: var(--metin-ikincil);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.proje-etiket {
+    display: inline-block;
+    font-size: 0.75rem;
+    background-color: rgba(56, 189, 248, 0.15);
+    color: var(--ana-vurgu);
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.site-footer {
+    background-color: var(--arkaplan-header);
+    border-top: 1px solid var(--kenarlik-rengi);
+    padding: 1.5rem 0;
+    margin-top: auto;
+}
+
+.footer-icerik {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--metin-ikincil);
+    font-size: 0.9rem;
+}
+
+.sosyal-linkler {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.sosyal-linkler a:hover {
+    color: var(--ana-vurgu);
+}
+/*MOBİL UYUMLULUK---------------------------------*/
+@media (max-width: 768px) {
+    .hamburger-icon {
+        display: block;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--metin-ana);
+    }
+
+    .ana-menu {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--arkaplan-header);
+        border-bottom: 1px solid var(--kenarlik-rengi);
+        padding: 1rem 0;
+    }
+
+    .menu-toggle:checked ~ .ana-menu {
+        display: block;
+    }
+
+    .ana-menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .hero-grid,
+    .hakkimda-grid,
+    .kart-grid,
+    .yetenek-etiket-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-bolumu {
+        padding: 3rem 0;
+        text-align: center;
+    }
+
+    .hero-metin h1 {
+        font-size: 2.2rem;
+    }
+
+    .buton-grubu {
+        justify-content: center;
+    }
+
+    .hero-gorsel {
+        order: -1;
+    }
+
+    .gorsel-yer-tutucu,
+    .profil-foto {
+        width: 220px;
+        height: 220px;
+    }
+
+    .footer-icerik {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+}
